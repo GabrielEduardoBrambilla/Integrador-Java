@@ -13,16 +13,15 @@ import java.beans.PropertyChangeSupport;
  * @author gabri
  */
 public class RegisterMenu extends javax.swing.JPanel {
- 
- 
-   /*
+    
+    /*
      * Creates new form RegisterMenu
      */
     public RegisterMenu() {
         initComponents();
-    }
 
-    
+    }
+  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -63,6 +62,7 @@ public class RegisterMenu extends javax.swing.JPanel {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setText("Fazer login");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
@@ -195,30 +195,14 @@ public class RegisterMenu extends javax.swing.JPanel {
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Panel content;
-    private javax.swing.JTextField email;
-    private javax.swing.JTextField email1;
     private javax.swing.JTextField email2;
     private javax.swing.JTextField email3;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private java.awt.Panel panel2;
-    private java.awt.Panel panel3;
-    private javax.swing.JTextField password;
-    private javax.swing.JTextField password1;
     private javax.swing.JTextField password2;
     private javax.swing.JTextField password3;
     // End of variables declaration//GEN-END:variables

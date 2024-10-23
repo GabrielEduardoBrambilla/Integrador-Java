@@ -5,33 +5,29 @@
 package View;
 
 import java.awt.BorderLayout;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author gabri
  */
 public class LoginMenu extends javax.swing.JPanel {
- 
+     private JFrame frame;  // Reference to the containing JFrame
+
        
-   private PropertyChangeSupport support;
-   public boolean shouldClose = false;
    /*
      * Creates new form RegisterMenu
      */
+    public LoginMenu(JFrame frame) {
+        this.frame = frame;
+        initComponents();
+    }
     public LoginMenu() {
         initComponents();
-        this.support = new PropertyChangeSupport(this);
-
     }
 
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-        support.addPropertyChangeListener(listener);
-    }
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-        support.removePropertyChangeListener(listener);
-    }
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,6 +72,11 @@ public class LoginMenu extends javax.swing.JPanel {
 
         jButton5.setText("Entrar");
         jButton5.setAutoscrolls(true);
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -149,52 +150,37 @@ public class LoginMenu extends javax.swing.JPanel {
         contentLogin.repaint();
         contentLogin.add(v, BorderLayout.CENTER);
         contentLogin.revalidate();
-
+        
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        
+        JFrame parentFrame = (JFrame)SwingUtilities.getWindowAncestor(LoginMenu.this);
+        System.out.println(parentFrame);
+        if (parentFrame != null) {
+            parentFrame.dispose();  // Close the JFrame
+        }
         StartScreen v = new StartScreen();
         v.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        if (frame != null) {
+            frame.dispose();  // Close the JFrame
+        }
+        StartScreen v = new StartScreen();
+        v.setVisible(true);
+    }//GEN-LAST:event_jButton5MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Panel content;
-    private java.awt.Panel content1;
-    private java.awt.Panel content2;
-    private java.awt.Panel content3;
     private java.awt.Panel contentLogin;
-    private javax.swing.JTextField email;
-    private javax.swing.JTextField email1;
-    private javax.swing.JTextField email2;
-    private javax.swing.JTextField email3;
     private javax.swing.JTextField email4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField password;
-    private javax.swing.JTextField password1;
-    private javax.swing.JTextField password2;
-    private javax.swing.JTextField password3;
     private javax.swing.JTextField password4;
     // End of variables declaration//GEN-END:variables
 }
